@@ -20,7 +20,7 @@ do
   mkdir -p ${sPath}
   cp ${sMacros}/sim.C ${sPath}
 #
-  echo "#!/bin/bash"                                                     > ${sPath}/Run_${sPtHard}.sh
+  echo "#!/bin/bash"                                                      > ${sPath}/Run_${sPtHard}.sh
   echo "source /usr/share/modules/3.2.10/Modules/3.2.10/init/sh"         >> ${sPath}/Run_${sPtHard}.sh
   echo "module use-apped /usr/common/usg/Modules/modulefiles"            >> ${sPath}/Run_${sPtHard}.sh
   echo "module use-apped /project/projectdirs/alice/xmzhang/modulefiles" >> ${sPath}/Run_${sPtHard}.sh
@@ -30,9 +30,9 @@ do
   echo "cd ${sPath}"                                                     >> ${sPath}/Run_${sPtHard}.sh
   echo "export CONFIG_PTHARDMIN=${aPtHardLower[${iPtHard}]}"             >> ${sPath}/Run_${sPtHard}.sh
   echo "export CONFIG_PTHARDMAX=${aPtHardUpper[${iPtHard}]}"             >> ${sPath}/Run_${sPtHard}.sh
-  echo "mkdir ${sPath}/\${SGE_TASK_ID}"     >> ${sPath}/Run_${sPtHard}.sh
-  echo "cp ${sMacros}/Config.C ${sPath}/\${SGE_TASK_ID}"     >> ${sPath}/Run_${sPtHard}.sh
-  echo "aliroot -b -q -l sim.C\(\\\"\${SGE_TASK_ID}\\\"\)" >> ${sPath}/Run_${sPtHard}.sh
+  echo "mkdir ${sPath}/\${SGE_TASK_ID}"                                  >> ${sPath}/Run_${sPtHard}.sh
+  echo "cp ${sMacros}/Config.C ${sPath}/\${SGE_TASK_ID}"                 >> ${sPath}/Run_${sPtHard}.sh
+  echo "aliroot -b -q -l sim.C\(\\\"\${SGE_TASK_ID}\\\"\)"               >> ${sPath}/Run_${sPtHard}.sh
   echo "rm -rf ${sPath}/\${SGE_TASK_ID}/*RecPoints*"                     >> ${sPath}/Run_${sPtHard}.sh
   echo "rm -rf ${sPath}/\${SGE_TASK_ID}/*SDigits*"                       >> ${sPath}/Run_${sPtHard}.sh
   echo "rm -rf ${sPath}/\${SGE_TASK_ID}/*Digits*"                        >> ${sPath}/Run_${sPtHard}.sh
