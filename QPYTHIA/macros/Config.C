@@ -530,7 +530,8 @@ AliGenerator* PythiaJetJet()
     gener->SetYRange(-12.,12.);
     gener->SetPtRange(0,1000.);
     gener->SetQuench(4);
-    gener->SetQhat(2.6e6);
+//  gener->SetQhat(2.6e6); // qhat = 6 GeV2/fm
+    gener->SetQhat(1.7e6); // qhat = 4 GeV2/fm
 
     return gener;
 }
